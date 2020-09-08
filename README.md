@@ -26,7 +26,7 @@ Navigate to Pages > Post an Announcement in the sidebar of the Admin Panel. Fill
 This code will embed data about the newest post. If there is none, no data will be returned.
 ```
 <?php
-  require('includes/modules.php');
+  require('installpath/includes/modules.php');
   $newestPost = getNewestPost();
 ?>
 
@@ -37,3 +37,10 @@ This code will embed data about the newest post. If there is none, no data will 
 <?=$newestPost['id']?><br/>
 <?=$newestPost['content']?><br/>
 ```
+Congratulations, you just used Opannounce to make and publish a post!
+
+## List of Modules
+`getNewestPost();`
+`getSecondPost();`
+`getThirdOrMorePost($number)`
+For this one, replace $number with the Xnd newest post value. For example, to get the 3rd newest post, replace it with 3.
