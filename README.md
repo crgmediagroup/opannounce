@@ -16,3 +16,24 @@ After that, navigate to the admin panel at the URL you installed the folder. Log
 | Email    | admin@example.com |<br/>
 | Password | admin             |<br/>
 After you log in, change your email by navigating to profile.php and changing your email. Log out, and use the forgot password function. After you log in with your new credentials, you are done setting up.
+
+## Quick start
+
+### Make an Announcement
+Navigate to Pages > Post an Announcement in the sidebar of the Admin Panel. Fill in the fields and hit post when you are done.
+
+### Embed it in a PHP page
+This code will embed data about the newest post. If there is none, no data will be returned.
+```
+<?php
+  require('includes/modules.php');
+  $newestPost = getNewestPost();
+?>
+
+<?=$newestPost['authorname']?><br/>
+<?=$newestPost['author']?><br/>
+<?=$newestPost['date']?><br/>
+<?=$newestPost['title']?><br/>
+<?=$newestPost['id']?><br/>
+<?=$newestPost['content']?><br/>
+```
