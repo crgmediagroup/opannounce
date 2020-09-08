@@ -1,5 +1,5 @@
 # opannounce
-CMS for announcements. Embed posts in PHP.
+CMS for announcements. Embed posts in PHP. Please note that source code does not contain CSS or JS for the admin panel.
 
 ## Installation
 To install, first download the latest release.
