@@ -11,8 +11,8 @@ There are two items in the latest release - a SQL file and a folder containing O
 Upload the folder to your web server. This is the folder that contains the admin panel and modules. Navigate to installpath/includes/config.php, and edit the values in there to your website.
 
 ### Account Setup
-After that, navigate to the admin panel at the URL you installed the folder. Log in with the default credentials:
-| Username | admin             |
-| Email    | admin@example.com |
-| Password | admin             |
+After that, navigate to the admin panel at the URL you installed the folder. Log in with the default credentials:<br/>
+| Username | admin             |<br/>
+| Email    | admin@example.com |<br/>
+| Password | admin             |<br/>
 After you log in, change your email by navigating to profile.php and changing your email. Log out, and use the forgot password function.
