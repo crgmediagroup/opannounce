@@ -13,7 +13,6 @@ Upload the folder to your web server. This is the folder that contains the admin
 ### Account Setup
 After that, navigate to the admin panel at the URL you installed the folder. Log in with the default credentials:
 | Username | admin             |
-|----------|-------------------|
 | Email    | admin@example.com |
 | Password | admin             |
 After you log in, change your email by navigating to profile.php and changing your email. Log out, and use the forgot password function.
