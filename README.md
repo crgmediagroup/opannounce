@@ -15,4 +15,4 @@ After that, navigate to the admin panel at the URL you installed the folder. Log
 | Username | admin             |<br/>
 | Email    | admin@example.com |<br/>
 | Password | admin             |<br/>
-After you log in, change your email by navigating to profile.php and changing your email. Log out, and use the forgot password function.
+After you log in, change your email by navigating to profile.php and changing your email. Log out, and use the forgot password function. After you log in with your new credentials, you are done setting up.
