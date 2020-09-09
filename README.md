@@ -11,8 +11,6 @@ There are two items in the latest release - a SQL file and a folder containing O
 Set the following values in your php.ini file.
 ```
 file_uploads = On
-
-upload_tmp_dir = 
  
 upload_max_filesize = 16M
  
