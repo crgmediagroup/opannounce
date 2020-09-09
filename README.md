@@ -61,7 +61,7 @@ First, create a post page. You can use the `getPostWithId($id)` module. Put the 
 ```
 That code will return six variables in an array just like any other module, using the GET method. For example, `example.com/path/to/post.php?id=4` will get a post with an id of 4.
 
-### Embedded posts as hyperlinks
+#### Embedded posts as hyperlinks
 For your embedded posts to link to individual pages, you need to make a hyperlink. See the example below.
 ```
 <?php
@@ -71,3 +71,6 @@ For your embedded posts to link to individual pages, you need to make a hyperlin
 <a href="path/to/post.php?id=<?=$newestPost['id']?>"><?=$newestPost['title']?></a>
 ```
 This example will create a hyperlink for the newest post and have it link to a post page with information about that post.
+
+### Multiple Accounts
+To have multiple users on your Opannounce installation, you just need to use signup again. Navigate to Pages > Signup, and fill out their details. If you like you can just put in some random password and have them use the forgot password function.
