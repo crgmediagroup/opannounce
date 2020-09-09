@@ -41,11 +41,13 @@
                           <input class="form-control forminput" type="hidden" name="selector" value="<?php echo $selector ?>">
                           <input class="form-control forminput" type="hidden" name="validator" value="<?php echo $validator ?>">
 
-                          <div class="col-sm-6 mb-3 mb-sm-0">
-                            <input type="password" class="form-control form-control-user" name="pwd" id="exampleInputPassword" placeholder="Password">
-                          </div>
-                          <div class="col-sm-6">
-                            <input type="password" class="form-control form-control-user" name="pwd-repeat" id="exampleRepeatPassword" placeholder="Repeat Password">
+                          <div class="form-group row">
+                            <div class="col-sm-6 mb-3 mb-sm-0">
+                              <input type="password" class="form-control form-control-user" name="pwd" id="exampleInputPassword" placeholder="Password">
+                            </div>
+                            <div class="col-sm-6">
+                              <input type="password" class="form-control form-control-user" name="pwd-repeat" id="exampleRepeatPassword" placeholder="Repeat Password">
+                            </div>
                           </div>
                           <button class="btn btn-primary submitbutton" type="submit" name="reset-password-submit">Reset password</button>
                         </form>
