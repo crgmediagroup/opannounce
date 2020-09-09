@@ -97,4 +97,35 @@ function getThirdOrMorePost($number) {
     'id' => $id,
     'content' => $content,
   );
+}  
+
+function getPostWithId($id) {
+  $idToGet = $id;
+
+  require 'includes/authprof.inc.php';
+
+  $stmt = $con->prepare('SELECT authorPosts, datePosts, titlePosts, descriptionPosts, idPosts FROM posts WHERE idPosts = '.$idToGet);
+  
+  $stmt->execute();
+  $stmt->bind_result($author, $date, $title, $content, $id);
+  $stmt->fetch();
+  $stmt->close();
+
+  require 'includes/authprof.inc.php';
+
+  $stmt = $con->prepare('SELECT uidUsers FROM users WHERE idUsers = '.$author);
+  
+  $stmt->execute();
+  $stmt->bind_result($authorname);
+  $stmt->fetch();
+  $stmt->close();
+
+  return array(
+    'author' => $author,
+    'authorname' => $authorname,
+    'date' => $date,
+    'title' => $title,
+    'id' => $id,
+    'content' => $content,
+  );
 }
