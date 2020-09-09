@@ -7,6 +7,24 @@ To install, first download the latest release.
 ### Database Setup
 There are two items in the latest release - a SQL file and a folder containing Opannounce. Navigate to phpMyAdmin in your hosting panel, and create a Database using the default settings. Import the SQL file downloaded earlier.
 
+### php.ini setup
+Set the following values in your php.ini file.
+```
+file_uploads = On
+
+upload_tmp_dir = 
+ 
+upload_max_filesize = 16M
+ 
+max_file_uploads = 20
+ 
+post_max_size = 20M
+ 
+max_input_time = 60
+memory_limit = 128M
+max_execution_time = 30
+```
+
 ### File Setup
 Upload the folder to your web server. This is the folder that contains the admin panel and modules. Navigate to installpath/includes/config.php, and edit the values in there to your website. Example values are already included.
 
