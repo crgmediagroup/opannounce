@@ -1,8 +1,11 @@
 <?php
   session_start();
   $configs = include('includes/config.php');
+  if (!isset($_SESSION['id'])) {
+    header('Location: index.php');
+    exit();
+  }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -68,14 +71,14 @@
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Login Screens:</h6>
-            <a class="collapse-item" href="login.php">Login</a>
-            <a class="collapse-item" href="register.php">Register</a>
+            <a class="collapse-item" href="register.php">Create Account</a>
             <a class="collapse-item" href="forgot-password.php">Forgot Password</a>
             <div class="collapse-divider"></div>
             <h6 class="collapse-header">Other Pages:</h6>
-            <a class="collapse-item" href="community.php">Announcements</a>
-            <a class="collapse-item" href="submitpost.php">Post an Announcement</a>
+            <a class="collapse-item" href="community.php">Post Archive</a>
+            <a class="collapse-item" href="submitpost.php">Post</a>
             <a class="collapse-item" href="profile.php">Profile</a>
+            <a class="collapse-item" href="upload.php">Uploads</a>
           </div>
         </div>
       </li>
@@ -148,10 +151,6 @@
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">
                 <?php
-                  if (!isset($_SESSION['id'])) {
-                    header('Location: index.php');
-                    exit();
-                  }
                   require 'includes/authprof.inc.php';
 
                   $stmt = $con->prepare('SELECT uidUsers FROM users WHERE idUsers = ?');

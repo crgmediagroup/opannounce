@@ -1,6 +1,5 @@
 <?php
   require('includes/modules.php');
-  $newestPost = getNewestPost();
+  $post = getPostWithId($_GET["id"]);
 ?>
-
-<?=$newestPost['authorname']?>
+<?=$post['title']?>
