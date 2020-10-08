@@ -14,12 +14,14 @@ function getNewestPost() {
   exit('Failed to connect to MySQL: ' . mysqli_connect_error());
   }
 
-  $stmt = $con->prepare('SELECT authorPosts, authorNamePosts, datePosts, titlePosts, idPosts, descriptionPosts FROM posts ORDER BY idPosts DESC LIMIT 1');
+  $stmt = $con->prepare('SELECT authorPosts, authorNamePosts, datePosts, titlePosts, idPosts, descriptionPosts, thumbnailPosts FROM posts ORDER BY idPosts DESC LIMIT 1');
 
   $stmt->execute();
-  $stmt->bind_result($author, $authorname, $date, $title, $id, $content);
+  $stmt->bind_result($author, $authorname, $date, $title, $id, $content, $thumbnail);
   $stmt->fetch();
   $stmt->close();
+
+  $thumbnail = $configs['protocol'].$configs['installdirectory'].$thumbnail;
 
   return array(
     'author' => $author,
@@ -28,6 +30,7 @@ function getNewestPost() {
     'title' => $title,
     'id' => $id,
     'content' => $content,
+    'thumbnail' => $thumbnail,
   );
 }
 
@@ -44,12 +47,14 @@ function getSecondPost() {
   exit('Failed to connect to MySQL: ' . mysqli_connect_error());
   }
 
-  $stmt = $con->prepare('SELECT authorPosts, authorNamePosts, datePosts, titlePosts, idPosts, descriptionPosts  FROM posts ORDER BY idPosts DESC LIMIT 1, 1');
+  $stmt = $con->prepare('SELECT authorPosts, authorNamePosts, datePosts, titlePosts, idPosts, descriptionPosts, thumbnailPosts  FROM posts ORDER BY idPosts DESC LIMIT 1, 1');
 
   $stmt->execute();
-  $stmt->bind_result($author, $authorname, $date, $title, $id, $content);
+  $stmt->bind_result($author, $authorname, $date, $title, $id, $content, $thumbnail);
   $stmt->fetch();
   $stmt->close();
+
+  $thumbnail = $configs['protocol'].$configs['installdirectory'].$thumbnail;
 
   return array(
     'author' => $author,
@@ -58,6 +63,7 @@ function getSecondPost() {
     'title' => $title,
     'id' => $id,
     'content' => $content,
+    'thumbnail' => $thumbnail,
   );
 }
 
@@ -82,12 +88,14 @@ function getThirdOrMorePost($number) {
   exit('Failed to connect to MySQL: ' . mysqli_connect_error());
   }
 
-  $stmt = $con->prepare('SELECT authorPosts, authorNamePosts, datePosts, titlePosts, idPosts, descriptionPosts  FROM posts ORDER BY idPosts DESC LIMIT '.$numbertominus.', 1');
+  $stmt = $con->prepare('SELECT authorPosts, authorNamePosts, datePosts, titlePosts, idPosts, descriptionPosts, thumbnailPosts  FROM posts ORDER BY idPosts DESC LIMIT '.$numbertominus.', 1');
 
   $stmt->execute();
-  $stmt->bind_result($author, $authorname, $date, $title, $id, $content);
+  $stmt->bind_result($author, $authorname, $date, $title, $id, $content, $thumbnail);
   $stmt->fetch();
   $stmt->close();
+
+  $thumbnail = $configs['protocol'].$configs['installdirectory'].$thumbnail;
 
   return array(
     'author' => $author,
@@ -96,6 +104,7 @@ function getThirdOrMorePost($number) {
     'title' => $title,
     'id' => $id,
     'content' => $content,
+    'thumbnail' => $thumbnail,
   );
 }  
 
@@ -104,12 +113,14 @@ function getPostWithId($id) {
 
   require 'includes/authprof.inc.php';
 
-  $stmt = $con->prepare('SELECT authorPosts, datePosts, titlePosts, descriptionPosts, idPosts FROM posts WHERE idPosts = '.$idToGet);
+  $stmt = $con->prepare('SELECT authorPosts, datePosts, titlePosts, descriptionPosts, idPosts, thumbnailPosts FROM posts WHERE idPosts = '.$idToGet);
   
   $stmt->execute();
-  $stmt->bind_result($author, $date, $title, $content, $id);
+  $stmt->bind_result($author, $date, $title, $content, $id, $thumbnail);
   $stmt->fetch();
   $stmt->close();
+
+  $thumbnail = $configs['protocol'].$configs['installdirectory'].$thumbnail;
 
   require 'includes/authprof.inc.php';
 
@@ -127,5 +138,6 @@ function getPostWithId($id) {
     'title' => $title,
     'id' => $id,
     'content' => $content,
+    'thumbnail' => $thumbnail,
   );
 }
