@@ -1,5 +1,5 @@
 # opannounce
-CMS for announcements. Embed posts in PHP. Please note that source code does not contain CSS or JS for the admin panel.
+CMS for announcements. Embed posts in PHP. Please note that source code does not contain CSS or JS for the admin panel. As of 1.3, the code is not written very well, but 1.4 (in the works) will be a huge update that cleans up code, improves efficiency, and adds more dynamic modules.
 
 ## Installation
 To install, first download the latest release.
@@ -89,4 +89,4 @@ For your embedded posts to link to individual pages, you need to make a hyperlin
 This example will create a hyperlink for the newest post and have it link to a post page with information about that post.
 
 ### Multiple Accounts
-To have multiple users on your Opannounce installation, you just need to use signup again. Navigate to Pages > Signup, and fill out their details. If you like you can just put in some random password and have them use the forgot password function.
+To have multiple users on your Opannounce installation, you just need to use signup again. Navigate to Pages > Signup, and fill out their details. If you like, you can just put in some random password and have them use the forgot password function, which will just send a verification email for the web server.
