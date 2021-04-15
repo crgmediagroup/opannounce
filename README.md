@@ -1,3 +1,8 @@
+# UPDATE - Please do not use this software.
+This repository is archived as the Opannounce software has been almost entirely replaced by other CMS systems. It is not production ready and should not be utilized in the current form.
+
+If you are running an OpAnnounce setup, please replace your systems with WordPress or similar.
+
 # opannounce
 CMS for announcements. Embed posts in PHP. Please note that source code does not contain CSS or JS for the admin panel. As of 1.3, the code is not written very well, but 1.4 (in the works) will be a huge update that cleans up code, improves efficiency, and adds more dynamic modules.
 
